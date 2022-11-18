@@ -11,23 +11,26 @@ const lastInLiImageEl = galleryItems
     .join("");
 galleryEl.innerHTML = '<ul class="gallery list">' + lastInLiImageEl + '</ul>';  
 
-
 //galleryEl.insertAdjacentHTML('beforeend', '<ul class="list">' + lastInLiImageEl + '</ul>');  
 
 
 const selectImg = event => {
     
     if (event.target.nodeName !== "IMG") { return; }
-    
-    const selectedImg = event.target.alt;
-    const namberEl = event.target.offsetParent.childElementCount;
+   // const selectimg = event.target;
+   // selectimg.classList.add("sel-img");
+   // const selectedAlt = event.target.alt;
+    const selectedImg = event.target.src;
     instance.show();
+    const navImgInDivEl = document.querySelector('.basicLightbox__placeholder > img'); 
+    navImgInDivEl.src = selectedImg;
     // const galleryEl = document.querySelector('.gallery >li [alt="${selectedImg}"]');
     //galleryEl.classList.add("gallery__link");
    
-    console.log(selectedImg);
-    console.log(namberEl);
-    console.log(event.currentTarget); console.log(event.target);
+   // console.log(selectedAlt);
+   // console.log(selectedImg);
+    
+   // console.log(event.currentTarget); console.log(event.target);
 };
 
 galleryEl.addEventListener("click", selectImg);
@@ -44,8 +47,9 @@ galleryEl.addEventListener("click", selectImg);
 
 
 const instance = basicLightbox.create(`
-    <img src="assets/images/image.png" width="800" height="600">
-`)
+   <img src="assets/images/image.png" width: 100%;>
+`) //<img src="assets/images/image.png" width="800" height="600">
+
 
 //instance.show()
 
