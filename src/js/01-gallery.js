@@ -53,13 +53,8 @@ galleryEl.addEventListener("click", selectImg);
   //      </p>
  //   </div>
 //`)
-
-
-
 const instance = basicLightbox.create(`
    <img src="assets/images/image.png" width: 100%;>
 `) //<img src="assets/images/image.png" width="800" height="600">
-
-
 //instance.show()
 
