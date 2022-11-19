@@ -7,7 +7,7 @@ const galleryEl = document.querySelector(".gallery");
 const lastInLiImageEl = galleryItems
   .map(({ preview, original, description }) =>
         ` <a class="gallery__item" href="${preview}">
-         <img class="gallery__image" src="${original}" alt="${description} title="Beautiful Image" />
+         <img class="gallery__image" src="${original}" alt="${description}" title="${description}"/>
         </a> 
         `)
     .join("");
@@ -18,3 +18,6 @@ gallery.on('show.simplelightbox', function () {
 	// do something…
 });
 
+//gallery.on('error.simplelightbox', function (e) {
+//	console.log(e); // some usefull information
+//});
