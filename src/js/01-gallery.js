@@ -33,7 +33,22 @@ const selectImg = event => {
     const selectedImg = event.target.src;
     instance.show();
     const navImgInDivEl = document.querySelector('.basicLightbox__placeholder > img'); 
-    navImgInDivEl.src = selectedImg;
+  navImgInDivEl.src = selectedImg;
+  
+const selectKeyEscp = event => { 
+  event.preventDefault();
+  const keyEnter = event.key;
+const navDivEl = document.querySelector('.basicLightbox');
+  console.log(keyEnter);
+  if (keyEnter === "Escape") { console.log(keyEnter === "Escape");
+    let event = new Event("click", { bubbles: true, cancelable: true});
+    navDivEl.dispatchEvent(event);
+  };
+
+};
+galleryEl.addEventListener("keydown", selectKeyEscp);
+
+
     // const galleryEl = document.querySelector('.gallery >li [alt="${selectedImg}"]');
     //galleryEl.classList.add("gallery__link");
    
@@ -54,7 +69,12 @@ galleryEl.addEventListener("click", selectImg);
  //   </div>
 //`)
 const instance = basicLightbox.create(`
-   <img src="assets/images/image.png" width: 100%;>
-`) //<img src="assets/images/image.png" width="800" height="600">
+   <img src="" width: 100%;>
+`
+); //<img src="assets/images/image.png" width="800" height="600">
 //instance.show()
+ 
 
+
+
+ 
